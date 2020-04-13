@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Courses page-School Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+  <!-- external css -->
+  <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+
+
+
+
+<body>
+  <!-- Navbar fixed on top and collapsible when in small screen-->
+  <nav class="navbar navbar-expand-md navbar-dark navbar-custom  fixed-top collapsibe">
+    <a class="navbar-brand" href="#">
+      <img src="AFDEmp.png" alt="Logo" style="width:80px;height:auto; height: auto;">
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Courses
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="courses.html">View Courses List</a>
+            <a class="dropdown-item" href="addcourse.html">Add a new Course</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Trainers
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="trainers.html">View Trainers List</a>
+            <a class="dropdown-item" href="addtrainer.html">Add a new Trainer</a>
+            <a class="dropdown-item" href="trainerspercourse.html">Edit Trainers per Course</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Students
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="students.html">View Students List</a>
+            <a class="dropdown-item" href="addstudent.html">Add a new Student</a>
+            <a class="dropdown-item" href="studentspercourse.html">Edit Students per Course</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Assignments
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="assignments.html">View Assignments List</a>
+            <a class="dropdown-item" href="addassignment.html">Add a new Assignment</a>
+            <a class="dropdown-item" href="assignmentspercourse.html">Edit Assignments per Course</a>
+            <a class="dropdown-item" href="assignmentsperstudent.html">Edit Assignments per Student</a>
+          </div>
+        </li>
+
+
+      </ul>
+
+    </div>
+
+
+  </nav>
+
+  <!-- Transition page loader - dots -->
+  <div id="pageloader">
+
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+
+  </div>
+  <!-- Table display -->
+  <div style="padding: 2%;">
+    <span>
+      <button type="submit" class="w3-button w3-round-xlarge, w3-button w3-pink " style="border-radius: 12px;"
+        data_but="btn-xs"><i class='fa fa-paper-plane'></i> Submit</button>
+    </span>
+    <span>
+      <button type="reset" class="w3-button w3-round-xlarge, w3-button w3-pink " style="border-radius: 12px;"
+        data_but="btn-xs"><i class='fa fa-trash'></i> Clear</button>
+    </span>
+
+    </form>
+  </div>
+
+
+  <div style="padding-top: 200px; text-align: center;" class="example">
+    <p><b>Courses</b></p>
+    <table class="table">
+      <thead>
+        <tr class="table-danger">
+          <th scope="col">Course</th>
+          <th scope="col">Stream</th>
+          <th scope="col">Type</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col"> </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-info">
+
+          <td>Computer Science</td>
+          <td>Java</td>
+          <td>Part-Time</td>
+          <td>3/5/2020</td>
+          <td>3/11/2020 </td>
+          <td><button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-edit'></i> Edit</button>
+            <button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-check-square'></i> Update</button></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>Computer Science</td>
+          <td>Java</td>
+          <td>Full-Time</td>
+          <td>3/5/2020</td>
+          <td>3/8/2020</td>
+          <td><button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-edit'></i> Edit</button>
+            <button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-check-square'></i> Update</button></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>Computer Science</td>
+          <td>C#</td>
+          <td>Part-Time</td>
+          <td>3/5/2020</td>
+          <td>3/11/2020</td>
+          <td><button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-edit'></i> Edit</button>
+            <button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-check-square'></i> Update</button></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>Computer Science</td>
+          <td>C#</td>
+          <td>Full-Time</td>
+          <td>3/5/2020</td>
+          <td>3/8/2020</td>
+          <td><button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-edit'></i> Edit</button>
+            <button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-check-square'></i> Update</button></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>Computer Science</td>
+          <td>Python</td>
+          <td>Part-Time</td>
+          <td>3/5/2020</td>
+          <td>3/11/2020</td>
+          <td><button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-edit'></i> Edit</button>
+            <button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-check-square'></i> Update</button></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>Computer Science</td>
+          <td>Python</td>
+          <td>Full-Time</td>
+          <td>3/5/2020</td>
+          <td>3/8/2020</td>
+          <td><button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-edit'></i> Edit</button>
+            <button onclick="openForm()" class="w3-button w3-round-xlarge, w3-button w3-pink"
+              style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-check-square'></i> Update</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Button that redirects to page addcourse.html -->
+  <div class="example" style="padding-bottom: 2%;">
+    <button type="button" onclick="window.location.href = 'addcourse.html';"
+      class="w3-button w3-round-xlarge, w3-button w3-pink " style="border-radius: 12px;" data_but="btn-xs"><i
+        class='fa fa-plus'> Add a new course</i></button>
+
+
+  </div>
+  <!-- Popup form for Edit / Update options -->
+  <div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <div style="padding: 2%;">
+        <label>Course*</label>
+        <select class="selectpicker form-control-sm" name="Courses" id="">
+          <option value="Computer Science" selected="selected">Computer Science</option>
+        </select>
+      </div>
+
+      <div style="padding: 2%;">
+        <label>Stream*</label>
+        <input class="form-control form-control-sm" required type="text" name="stream" id="cstream"
+          placeholder="Stream e.g. Java">
+      </div>
+
+      <div style="padding: 2%;">
+        <label>Type*</label>
+        <select class="selectpicker form-control-sm" name="Type" id="">
+          <option value="Part-Time" selected="selected">Part-Time</option>
+          <option value="Full-Time">Full-Time</option>
+        </select>
+      </div>
+
+
+
+
+
+      <div style="padding: 2%;">
+        <!-- Readonly so that the user cannot type but only choose date from calendar -->
+        <label>Start Date</label>
+        <input class="form-control form-control-sm" id="datepicker" name="date" placeholder="DD/MM/YYY" type="text"
+          readonly />
+      </div>
+
+      <div style="padding: 2%;">
+        <!-- Readonly so that the user cannot type but only choose date from calendar -->
+        <label>End Date</label>
+        <input class="form-control form-control-sm" id="datepicker2" name="date" placeholder="DD/MM/YYY" type="text"
+          readonly />
+      </div>
+
+      <!-- Submit, Reset and Cancel buttons -->
+      <div style="padding: 2%;">
+        <span>
+          <button type="submit" class="w3-button w3-round-xlarge, w3-button w3-pink " id="myBtn"
+            style="border-radius: 12px;" data_but="btn-xs"><i class='fa fa-check-square'></i> Update</button>
+        </span>
+        <span>
+          <button type="reset" class="w3-button w3-round-xlarge, w3-button w3-pink " style="border-radius: 12px;"
+            data_but="btn-xs"><i class='fa fa-trash'></i> Clear</button>
+        </span>
+      </div>
+      <div style="padding: 2%;">
+
+        <span>
+          <button onclick="closeForm()" type="reset" class="w3-button w3-round-xlarge, w3-button w3-pink"
+            style="border-radius: 12px; " data_but="btn-xs"><i class='fa fa-window-close'></i> Cancel</button>
+        </span>
+      </div>
+    </form>
+
+
+
+
+
+    <!-- Documentation for Start Date and End Date calendar - Start date minimum: today - 
+  Maximum date user can choose: 3 years from today . End Date minimum: 6 months after today 
+Maximum: 3 years from today-->
+    <script>
+
+
+      $(document).ready(function () {
+
+        $('#datepicker').datepicker({
+          dateFormat: "dd-mm-yy",
+          maxDate: '+3y ',
+          minDate: 0
+
+        });
+
+      });
+
+      $(document).ready(function () {
+
+        $('#datepicker2').datepicker({
+          dateFormat: "dd-mm-yy",
+          maxDate: '+3y ',
+          minDate: '+6m'
+
+        });
+
+      });
+
+
+    </script>
+
+    <!-- Documentation for successful submission - External .js - Sweet alert content-->
+    <script src="alertsuccess.js"></script>
+    <!-- Documentation for opening and closing popup form - External .js-->
+    <script src="formFunctions.js"></script>
+    <!-- Sweet alerts  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- Documentation for loading transition dots - External .js -->
+    <script src="loader.js"></script>
+
+
+</body>
+
+
+
+</html>
